@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Course Completion Certificate</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+		body {
+			font-family: 'Montserrat', sans-serif;
+			color: #4A4A4A;
+			background-color: #F2F2F2;
+			margin: 0;
+			padding: 5;
+			text-align: center;
+			line-height: 2.0;
+		}
+
+		.container {
+			margin: 100px;
+			padding: 180px;
+			background-color: #FFFFFF;
+			border-radius: 10px;
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+		}
+
+		.title {
+			font-size: 45px;
+			font-weight: 600;
+			margin: 10px 0;
+			color: #4B0082;
+		}
+
+		.subtitle {
+			font-size: 35px;
+			font-weight: 600;
+			margin: 20px 0 10px 0;
+			color: #008080;
+		}
+
+		.details {
+			font-size: 30px;
+			margin: 10px 0;
+		}
+
+
+		.signature {
+			font-size: 16px;
+			font-weight: 600;
+			margin: 40px 0 20px 0;
+			color: #4B0082;
+			position: absolute;
+  			bottom: 0.1px;
+  			left: 200px;
+		}
+
+		.footer {
+			font-size: 14px;
+			font-weight: 600;
+			margin-top: 60px;
+			color: #4B0082;
+			position: absolute;
+            bottom: 0;
+            left: 1100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="title">
+			Certificate of Completion
+		</div>
+		<div class="subtitle">
+			Congratulations!
+		</div>
+		<div class="details">
+			This certifies that<br>
+			<b>{{ user.full_name }}</b><br>
+			has successfully completed the course<br>
+			<b>{{ course.course_name }}</b><br>
+<!--			On {{ certificate.completed_On|date:"F d, Y" }}-->
+		</div>
+<!--		<div class="signature">-->
+<!--			Authorized Signature<br>-->
+<!--		</div>-->
+		<div class="footer">
+<!--			Issued on {{ course.publish|date:"F d, Y"  }}<br>-->
+			Issued by LearnMate <br>
+			learnmate@gmail.com<br>
+
+		</div>
+
+	</div>
+<!--	<a class="btn btn-sm btn-primary ms-md-6 px-6 mb-3 mb-md-0 flex-shrink-0"  href="{% url 'download_pdf_Certificate' 2 %}">Download</a>-->
+<div class="pos_right" style="width:80px;height:60px;text-align:center; solid #787878">
+        <button class="btn btn-secondary" onclick="window.print();">
+        <i class="fas fa-print"></i>
+       DOWNLOAD
+     </button></div>
+		<script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</body>
+<!--     JAVASCRIPT-->
+<!--    ================================================== &ndash;&gt;-->
+    <!-- Libs JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'assets/libs/aos/dist/aos.js' %}"></script>
+    <script src="{% static 'assets/libs/choices.js/public/assets/scripts/choices.min.js' %}"></script>
+    <script src="{% static 'assets/libs/countup.js/dist/countUp.min.' %}"></script>
+    <script src="{% static 'assets/libs/dropzone/dist/min/dropzone.min.js' %}"></script>
+    <script src="{% static 'assets/libs/flickity/dist/flickity.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/libs/flickity-fade/flickity-fade.js' %}"></script>
+    <script src="{% static 'assets/libs/highlightjs/highlight.pack.min.js' %}"></script>
+    <script src="{% static 'assets/libs/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/libs/isotope-layout/dist/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/libs/jarallax/dist/jarallax.min.js' %}"></script>
+    <script src="{% static 'assets/libs/jarallax/dist/jarallax-video.min.js' %}"></script>
+    <script src="{% static 'assets/libs/jarallax/dist/jarallax-element.min.js' %}"></script>
+    <script src="{% static 'assets/libs/parallax-js/dist/parallax.min.js' %}"></script>
+    <script src="{% static 'assets/libs/quill/dist/quill.min.' %}"></script>
+    <script src="{% static 'assets/libs/smooth-scroll/dist/smooth-scroll.min.js' %}"></script>
+    <script src="{% static 'assets/libs/typed.js/lib/typed.min.' %}"></script>
+
+    <!-- Map -->
+    <script src='../../../api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+    <!-- Theme JS -->
+    <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+
+</html>

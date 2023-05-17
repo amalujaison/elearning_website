@@ -10,44 +10,44 @@
 	<meta name="keywords" content="" />
 	<meta name="author" content="" />
 	<meta name="robots" content="" />
-	
+
 	<!-- DESCRIPTION -->
 	<meta name="description" content="EduChamp : Education HTML Template" />
-	
+
 	<!-- OG -->
 	<meta property="og:title" content="EduChamp : Education HTML Template" />
 	<meta property="og:description" content="EduChamp : Education HTML Template" />
 	<meta property="og:image" content="" />
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- FAVICONS ICON ============================================= -->
 	<link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon" />
 	<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}" />
-	
+
 	<!-- PAGE TITLE HERE ============================================= -->
 	<title>EduChamp : Education HTML Template </title>
-	
+
 	<!-- MOBILE SPECIFIC ============================================= -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<!--[if lt IE 9]>
 	<script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
 	<script src="{% static 'assets/js/respond.min.js' %}"></script>
 	<![endif]-->
-	
+
 	<!-- All PLUGINS CSS ============================================= -->
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/assets.css' %}">
-	
+
 	<!-- TYPOGRAPHY ============================================= -->
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/typography.css' %}">
-	
+
 	<!-- SHORTCODES ============================================= -->
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/shortcodes/shortcodes.css' %}">
-	
+
 	<!-- STYLESHEETS ============================================= -->
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
 	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'assets/css/color/color-1.css' %}">
-	
+
 </head>
 <body id="bg">
 <div class="page-wraper">
@@ -116,7 +116,7 @@
 						<div class="menu-logo">
 							<a href="index.html"><img src="{% static 'assets/images/logo.png" alt=""></a>
 						</div>
-                        <ul class="nav navbar-nav">	
+                        <ul class="nav navbar-nav">
 							<li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
 									<li><a href="index.html">Home 1</a></li>
@@ -289,15 +289,15 @@
 												<ul class="filters" data-toggle="buttons">
 													<li data-filter="" class="btn active">
 														<input type="radio">
-														<a href="#"><span>All</span></a> 
+														<a href="#"><span>All</span></a>
 													</li>
 													<li data-filter="publish" class="btn">
 														<input type="radio">
-														<a href="#"><span>Publish</span></a> 
+														<a href="#"><span>Publish</span></a>
 													</li>
 													<li data-filter="pending" class="btn">
 														<input type="radio">
-														<a href="#"><span>Pending</span></a> 
+														<a href="#"><span>Pending</span></a>
 													</li>
 												</ul>
 											</div>
@@ -628,9 +628,9 @@
 														<input class="form-control" type="text" value="+120 012345 6789">
 													</div>
 												</div>
-												
+
 												<div class="seperator"></div>
-												
+
 												<div class="form-group row">
 													<div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
 														<h3>2. Address</h3>
@@ -713,6 +713,9 @@
 											<h3>Change Password</h3>
 										</div>
 										<form onsubmit="return resetValidate()" method="POST" action="{% url 'changepassword' %}"  class="edit-profile">
+											 {% comment %} {% include 'Message.html' %} {% endcomment %}
+                        						{% csrf_token %}
+
 											<div class="">
 												<div class="form-group row">
 													<div class="col-12 col-sm-8 col-md-8 col-lg-9 ml-auto">
@@ -722,19 +725,19 @@
 												<div class="form-group row">
 													<label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">Current Password</label>
 													<div class="col-12 col-sm-8 col-md-8 col-lg-7">
-														<input class="form-control" type="password" value="">
+														<input class="form-control" type="password" value="" name="current_password"  id="current_password">
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">New Password</label>
 													<div class="col-12 col-sm-8 col-md-8 col-lg-7">
-														<input class="form-control" type="password" value="">
+														<input class="form-control" type="password" value="" name="new_password" id="new_password">
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">Re Type New Password</label>
 													<div class="col-12 col-sm-8 col-md-8 col-lg-7">
-														<input class="form-control" type="password" value="">
+														<input class="form-control" type="password" value="" name="confirm_password" id="confirm_password">
 													</div>
 												</div>
 											</div>
@@ -746,7 +749,7 @@
 													<button type="reset" class="btn-secondry">Cancel</button>
 												</div>
 											</div>
-												
+
 										</form>
 									</div>
 									<script type="text/javascript">
@@ -794,7 +797,7 @@
         }
     }
 </script>
-								</div> 
+								</div>
 							</div>
 						</div>
 					</div>
@@ -840,7 +843,7 @@
 										<input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
 										<span class="input-group-btn">
 											<button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
-										</span> 
+										</span>
 									</div>
 								</form>
 							</div>

@@ -25,13 +25,18 @@ SECRET_KEY = 'django-insecure-0&4&=@6lmazo^#i2s(k8(#o(w1#*sa7lq+71lwzjrdzc2wm^%w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'elearnapp',
+    'LearnmateEdu',
+    'chat',
+    'channels',
+    'admin_interface',
+    'colorfield',
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+CART_SESSION_ID = 'cart'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,12 +70,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processor.cart_total_amount'
+
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'elearning.wsgi.application'
+ASGI_APPLICATION = 'elearning.asgi.application'
 
 
 # Database
@@ -77,7 +86,7 @@ WSGI_APPLICATION = 'elearning.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_elearn',
+        'NAME': 'LearnmateEdu',
         'USER': 'postgres',
         'PASSWORD': 'elearn',
         'HOST': 'localhost',
@@ -117,12 +126,14 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+AUTH_USER_MODEL = 'LearnmateEdu.Account'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
 
+RAZORPAY_API_KEY = 'rzp_test_90uPhFCRihliRL'
+RAZORPAY_API_SECRET_KEY = 'D8btZeNNOUUYzUGGRH27OGYp'
 
 STATICFILES_DIRS = [os.path.join('static')]
 STATIC_ROOT = os.path.join('assets')
@@ -133,3 +144,12 @@ MEDIA_ROOT = os.path.join('media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'learnmateedu@gmail.com'
+DEFAULT_FROM_EMAIL = 'learnmateedu@gmail.com'
+SERVER_EMAIL = 'learnmateedu@gmail.com'
+EMAIL_HOST_PASSWORD = 'agfnbpkfglhotrna'
+
+EMAIL_USE_TLS = True

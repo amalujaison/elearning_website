@@ -1,0 +1,18 @@
+{% load static %}
+<form action="{% url 'payment-success' %}" method="POST">
+    {% csrf_token %}
+    <script src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="{{ settings.RAZORPAY_API_KEY }}"
+            data-amount="{{ amount }}"
+            data-currency="INR"
+            data-order_id="{{ order_id }}"
+            data-buttontext="Pay with Razorpay"
+            data-name="Course Payment"
+            data-description="Payment for {{ course.title }}"
+            data-image="{% static 'path/to/your/image' %}"
+            data-prefill.name="{{ request.user.first_name }} {{ request.user.last_name }}"
+            data-prefill.email="{{ request.user.email }}"
+            data-theme.color="#F37254">
+    </script>
+    <input type="hidden" name="course_id" value="{{ course.id }}">
+</form>

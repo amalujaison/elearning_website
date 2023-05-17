@@ -13,6 +13,114 @@
     <!-- Main css -->
     <link rel="stylesheet" href="{%static 'css/style.css' %}">
 </head>
+<script>
+//email
+
+                                function Validateemail()
+                                        {
+                                        var email=document.getElementById('email').value;
+                                        var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+                                        if(email.length<3||email.length>40){
+                                            document.getElementById('email1').innerHTML="Invalid Email";
+                                                document.getElementById('email').value = email;
+                                                document.getElementById('email').style.color = "red";
+                                                return false;
+                                        }
+                                        if(!email.match(/^[\w\+\'\.-]+@[\w\'\.-]+\.[a-zA-Z]{2,}$/)){
+                                            document.getElementById('email1').innerHTML="Please enter a valid email";
+                                            document.getElementById('email').value = email;
+                                                document.getElementById('email').style.color = "red";
+                                        return false;
+                                        }else{
+                                        document.getElementById('email1').innerHTML=" ";
+                                        document.getElementById('email').style.color = "green";
+                                        // return true;
+                                        }
+                                    }
+
+
+//phone
+
+                                function Validphone()
+                                {
+                                var val=document.getElementById('phone').value;
+                                if (!val.match(/^[6789][0-9]{9}$/))
+                                {document.getElementById('msg2').innerHTML="only numbers are allowed";
+                                document.getElementById('phone').value = val;
+                                return false;
+                                }else{
+                                document.getElementById('msg2').innerHTML="";
+                                // return true;
+                                }
+                                }
+
+
+//fname
+
+function Validstr1() {
+                                                            var val = document.getElementById('fname').value;
+                                                            if (!val.match(/^[A-Za-z ]*$/))
+                                                            {
+                                                            document.getElementById('m1').innerHTML="Only alphabets are allowed";
+                                                                    document.getElementById('fname').value = val;
+                                                                    document.getElementById('fname').style.color = "red";
+                                                                    return false;
+                                                                    flag=1;
+                                                            }
+                                                            else{
+                                                            document.getElementById('m1').innerHTML=" ";
+                                                            document.getElementById('fname').style.color = "green";
+                                                            //return true;
+
+                                                            }
+                                                        }
+
+//lname
+
+function Validstr2() {
+                                                            var val = document.getElementById('lname').value;
+                                                            if (!val.match(/^[A-Za-z ]*$/))
+                                                            {
+                                                            document.getElementById('m2').innerHTML="Only alphabets are allowed";
+                                                                    document.getElementById('lname').value = val;
+                                                                    document.getElementById('lname').style.color = "red";
+                                                                    return false;
+                                                                    flag=1;
+                                                            }
+                                                            else{
+                                                            document.getElementById('m2').innerHTML=" ";
+                                                            document.getElementById('lname').style.color = "green";
+                                                            //return true;
+
+                                                            }
+                                                        }
+function Password()
+                                            {
+                                                var pass=document.getElementById('pass').value;
+                                                //var patt= /^(?=.[0-9])(?=.[!@#$%^&])[A-Za-z0-9!@#$%^&]{7,15}$/;
+                                                //var patt = /^[a-zA-Z0-9@#$%^&]{7,15}$/;
+                                                var patt = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{7,15}$/;
+
+                                                if(!pass.match(patt)){
+                                                    console.log(pass);
+                                                    document.getElementById('pass1').innerHTML="Password must be 7 to 15 character with number and special character ";
+                                                    document.getElementById('pass').value = pass;
+                                                        document.getElementById('pass').style.color = "red";
+                                                return false;
+                                                }else{
+                                                    console.log(pass, "Green");
+                                                document.getElementById('pass1').innerHTML=" ";
+                                                document.getElementById('pass').style.color = "green";
+                                                //return true;
+                                                }
+                                            }
+
+    function Val(){
+    if(Validphone()==false || Validphone()==false ||Validstr1()==false || Validstr2()==false || Password()==false){
+    return false;
+    }
+    }
+</script>
 <body>
 
     <div class="main">
@@ -22,33 +130,46 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
+                         <div>
+                            {% for message in messages %}
+                            <h3 style="font-size:12px;margin-top:-5px;" class="social-label">{{message}}</h3>
+                            {% endfor %}
+                        </div>
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" action="{% url 'register' %}" class="register-form" id="register-form">
+                        <form method="POST" action="{% url 'user_reg' %}" onsubmit="return Val();" class="register-form" id="register-form">
                         {% csrf_token %}
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" pattern="^[A-Za_z][A-Za-z -]+$" title="The name should begin with capital letter Followed by uppercase or lowercase"placeholder="Your Name" required/>
+                                <label for="fname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="first_name" id="fname" placeholder="Your First Name" onkeyup="return Validstr1()"/>
                             </div>
+                            <span id="m1" style="color:red;"></span>
+                            <div class="form-group">
+                                <label for="lname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="last_name" id="lname" placeholder="Your Last Name" onkeyup="return Validstr2()"/>
+                            </div>
+                            <span id="m2" style="color:red;"></span>
 
                             <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz"></div>
 
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="must enter a valid email address" placeholder="Your Email" required/>
+                                <input type="email" name="email" id="email" placeholder="Your Email" onkeyup="return Validateemail()"/>
                             </div>
-
-
+                            <span id="email1" style="color:red;"></span>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"placeholder="Password" required/>
+                                <input type="password" name="password" id="pass" placeholder="Password" onkeyup="return Password()"/>
                             </div>
+                            <span id="pass1" style="color:red;"></span>
                             
                             <div class="form-group">
                                 <label><i class="bi bi-telephone-fill"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
                                   </svg></i></label>
-                                <input type="number" name="phone" id="phone"pattern="[0-9]{10}" title="must contain 10 digits"  placeholder="enter phonenumber" required/>
+                                <input type="number" name="phone" id="phone"  placeholder="enter phonenumber" onkeyup="return Validphone()"/>
                             </div>
+                            <span id="msg2" style="color:red;"></span>
+
                             <div class="form-group">
                                 <label><i class="bi bi-house-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
@@ -78,11 +199,7 @@
                             </div>
                             
                         </form>
-                        <div>
-                            {% for message in messages %}
-                            <h3 style="font-size:12px;margin-top:-5px;" class="text-danger font-weight-bold">{{message}}</h3>
-                            {% endfor %}
-                        </div>
+
                     </div>
                     <div class="signup-image">
                         <figure><img src="{%static 'images/signup-image.jpg' %}" alt="sing up image"></figure>
@@ -92,6 +209,7 @@
                 </div>
             </div>
         </section>
+
         <!-- JS -->
     <script src="{%static 'vendor/jquery/jquery.min.js' %}"></script>
     <script src="{%static 'js/main.js' %}"></script>

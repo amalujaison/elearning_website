@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+					.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height:5;
+  border: 8px solid green;
+  padding: 10px;
+}
+
+				</style>
+<div>
+
+				<div class="center" align="centre ">
+
+<div class="container "align="center "  >
+{% for message in messages %}
+                            <h3 style="font-size:22px;margin-top:-5px;color:red" class="social-label">{{message}}</h3>
+                            {% endfor %}
+    <div class="card-columns" style="padding: 90px; margin: 50px;">
+        <div class="card" align="centre " style="width: 42rem;">
+            <img class="card-img-top" src="http://kmit.in/emagazine/wp-content/uploads/2018/02/karnataka-results.jpg" alt="Card image cap">
+            <div class="card-body" text-align="centre ">
+                <h5 style="font-size:20px;color:red;margin-left:2px;text-align:center;"class="card-title">Score: {{score}}</h5>
+
+                <p style="font-size:20px;color:red;margin-left:2px;text-align:center;" class="card-text">Percentage: {{percent}}%</p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<a href="{% url 'generate_certificate' 2 %}" class="btn btn-sm btn-primary ms-md-6 px-6 mb-3 mb-md-0 flex-shrink-0">Download certificate</a></div>
+{% endblock %}

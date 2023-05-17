@@ -62,30 +62,32 @@
 <div id="loading-icon-bx"></div>
 	<!-- Header Top ==== -->
     <header class="header rs-nav header-transparent">
-		<div class="top-bar">
+		<div class="top-bar" id="google_element">
 			<div class="container">
 				<div class="row d-flex justify-content-between">
 					<div class="topbar-left">
 						<ul>
 							<li><a href="faq-1.html"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
-							<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
+							<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>learnmateedu@gmail.com</a></li>
 						</ul>
 					</div>
 					<div></div>
 					<div class="topbar-right">
 
 						<ul>
+<!--							<li>-->
+<!--								<select class="header-lang-bx">-->
+<!--									<option data-icon="flag flag-uk">English UK</option>-->
+<!--									<option data-icon="flag flag-us">English US</option>-->
+<!--								</select>-->
+<!--							</li>-->
+
+
 <!--							<li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>-->
 <!--								<li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>-->
 <!--								<li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>-->
-<!--								&lt;!&ndash; Search Button ==== &ndash;&gt;-->
+								<!-- Search Button ==== -->
 <!--								<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>-->
-						<li>
-								<select class="header-lang-bx">
-									<option data-icon="flag flag-uk">English UK</option>
-									<option data-icon="flag flag-us">English US</option>
-								</select>
-							</li>
 
 <!--							<li><a href="{% url 'REGISTRATION' %}"><label><i class="bi bi-cart3"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">-->
 <!--  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>-->
@@ -94,8 +96,118 @@
 <!--							<li><a href="{% url 'REGISTRATION' %}"><label><i class="bi bi-heart"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">-->
 <!-- <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>-->
 <!--</svg></label></a></li>-->
-							<li><a href="{% url 'LOGIN' %}">Login</a></li>
-							<li><a href="{% url 'REGISTRATION' %}">Registration</a></li>
+<!--							<div class="form-row">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="state">Register</label>-->
+<!--                                <div class="form-select">-->
+<!--                                    <select name="state" id="state" class="header-lang-bx">-->
+<!--&lt;!&ndash;                                        <option value=""></option>&ndash;&gt;-->
+<!--                                        <option value="us">As User</option>-->
+<!--                                        <option value="uk">As Mentor</option>-->
+<!--                                    </select>-->
+<!--                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="city">Login</label>-->
+<!--                                <div class="form-select">-->
+<!--                                    <select name="city" id="city" class="header-lang-bx">-->
+<!--                                        <option value=""></option>-->
+<!--                                        <option value="losangeles">As User</option>-->
+<!--                                        <option value="washington">As Mentor</option>-->
+<!--                                    </select>-->
+<!--                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+						<div class="dropdown">
+  <button class="dropbtn">Register</button>
+  <div class="dropdown-content">
+	  <a href="{% url 'REGISTRATION' %}">As User</a>
+	  <a href="{% url 'mentor_registration' %}">As Mentor</a>
+    <a href="{% url 'company_registration' %}">As Company</a>
+
+
+
+<script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+                            <script >
+                                function loadGoogleTranslate(){
+                                   new google.translate.TranslateElement("google_element");
+                                }
+
+
+                </script>
+
+
+<!--    <a href="#">Link 3</a>-->
+  </div>
+</div>
+							<div class="dropdown">
+  <button class="dropbtn">Login</button>
+  <div class="dropdown-content">
+	  <a href="{% url 'LOGIN' %}">As User</a>
+	  <a href="{% url 'mentor_login' %}">As Mentor</a>
+    <a href="{% url 'company_login' %}">As Company</a>
+<!--    <a href="#">Link 3</a>-->
+  </div>
+</div>
+
+							<style>
+	/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  color: white;
+
+  font-size: 15px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+
+</style>
+<!--							<div class="topbar-right">-->
+<!--						<ul class="sub-menu">-->
+<!--							<li>-->
+<!--								<select class="header-lang-bx">-->
+<!--									<option data-icon="flag flag-uk">As User</option>-->
+<!--									<option data-icon="flag flag-us">As Mentor</option>-->
+<!--								</select>-->
+<!--							</li>-->
+<!--&lt;!&ndash;							<li><a href="login.html">Login</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;							<li><a href="register.html">Register</a></li>&ndash;&gt;-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--							<li><a href="{% url 'LOGIN' %}">Login</a></li>-->
+<!--							<li><a href="{% url 'REGISTRATION' %}">Registration</a></li>-->
 
 <!--							<div class="dropdown">-->
 <!--                               <button onclick="myFunction()" class="dropbtn">Register</button>-->
@@ -106,6 +218,21 @@
 <!--                           </div>-->
 
 						</ul>
+<!--						<div class="secondary-menu">-->
+<!--                        <div class="secondary-inner">-->
+<!--                           <ul>-->
+<!--							   <form action="{% url 'search_course' %}" method="GET">-->
+<!--								<div class="input-group">-->
+<!--									<input type="text" name="query" class="form-control" placeholder="Search courses here">-->
+<!--									<div >-->
+<!--										<button class="btn" type="submit"><i class="fa fa-search"></i></button>-->
+<!--&lt;!&ndash;									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>&ndash;&gt;-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</form>-->
+<!--							</ul>-->
+<!--						</div>-->
+<!--                    </div>-->
 					</div>
 
 				</div>
@@ -127,18 +254,24 @@
 						<span></span>
 					</button>
 					<!-- Author Nav ==== -->
-                 <div class="secondary-menu">
-                        <div class="secondary-inner">
-                           <ul>
-								<li><a href="https://www.facebook.com/" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="https://web.whatsapp.com/" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="https://www.linkedin.com/login" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
-								<!-- Search Button ==== -->
-								<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
-							</ul>
-						</div>
-                    </div>
+<!--                 <div class="secondary-menu">-->
+<!--                        <div class="secondary-inner">-->
+<!--                           <ul>-->
+<!--							   <form action="{% url 'search_course' %}" method="GET">-->
+<!--								<div class="input-group">-->
+<!--									<input type="text" name="query" class="form-control" placeholder="Search courses here">-->
+<!--									<div >-->
+<!--										<button class="btn" type="submit"><i class="fa fa-search"></i></button>-->
+<!--&lt;!&ndash;									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>&ndash;&gt;-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</form>-->
+<!--							</ul>-->
+<!--						</div>-->
+<!--                    </div>-->
+
 					<!-- Search Box ==== -->
+
                     <div class="nav-search-bar">
                         <form action="#">
                             <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
@@ -152,40 +285,49 @@
 							<a href="index.html"><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">
+							<li><a href="javascript:;">Courses<i class="fa fa-chevron-down"></i></a>
+
+								<ul class="sub-menu">
+									<li><a href="{% url 'courses' %}">courses</a></li>
+
+
+									</ul>
+							</li>
 <!--							<li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>-->
 <!--								<ul class="sub-menu">-->
 <!--									<li><a href="{% url 'home1' %}">Home</a></li>-->
 
 <!--								</ul>-->
 <!--							</li>-->
-							<li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
-								<ul class="sub-menu add-menu">
-									<li class="add-menu-left">
+<!--							<li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>-->
+<!--								<ul class="sub-menu add-menu">-->
+<!--									<li class="add-menu-left">-->
 
-										<ul>
-											<li><a href="{% url 'freecourse' %}">Free Courses </a></li>
-											<li><a href="{% url 'paidcourse' %}">Paid Courses </a></li>
-										</ul>
-									</li>
-									<li class="add-menu-right">
-										<img src="{% static 'assets/images/adv/adv.jpg' %}" alt=""/>
-									</li>
-								</ul>
-							</li>
+<!--										<ul>-->
+
+<!--											<li><a href="{% url 'courses' %}">Python</a></li>-->
+<!--											<li><a href="#">Java</a></li>-->
+<!--											<li><a href="#">C</a></li>-->
+<!--											<li><a href="#">React</a></li>-->
+<!--										</ul>-->
+<!--									</li>-->
+<!--									<li class="add-menu-right">-->
+<!--										<img src="{% static 'assets/images/adv/adv.jpg' %}" alt=""/>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</li>-->
 <!--							<li><a href="javascript:;">Course Details<i class="fa fa-chevron-down"></i></a>-->
 <!--								<ul class="sub-menu">-->
 <!--									<li><a href="javascript:;">Python<i class="fa fa-angle-right"></i></a>-->
 <!--										<ul class="sub-menu">-->
-<!--											<li><a href="{% url 'coursesdetails' %}">Introduction to Python</a></li>-->
-<!--											<li><a href="{% url 'coursesdetailsp2' %}">Advanced Python</a></li>-->
-<!--										</ul>-->
+<!--
+									</ul>-->
 <!--									</li>-->
 
 <!--									<li><a href="javascript:;">Java<i class="fa fa-angle-right"></i></a>-->
 <!--										<ul class="sub-menu">-->
-<!--											<li><a href="{% url 'javaintrod' %}">Java 1</a></li>-->
-<!--											<li><a href="{% url 'javaadv' %}">Java 2</a></li>-->
-<!--										</ul>-->
+<!--
+										</ul>-->
 <!--									</li>-->
 <!--									<li><a href="javascript:;">C<i class="fa fa-angle-right"></i></a>-->
 <!--										<ul class="sub-menu">-->
@@ -201,44 +343,44 @@
 <!--									</li>-->
 <!--								</ul>-->
 <!--							</li>-->
-							<li><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
-								<ul class="sub-menu">
-									<li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
-										<ul class="sub-menu">
-											<li><a href="{% url 'about2' %}">About 2</a></li>
-										</ul>
-									</li>
+<!--							<li><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>-->
+<!--								<ul class="sub-menu">-->
+<!--									<li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>-->
+<!--										<ul class="sub-menu">-->
+<!--											<li><a href="{% url 'about2' %}">About 2</a></li>-->
+<!--										</ul>-->
+<!--									</li>-->
 
-									<li><a href="javascript:;">Contact Us<i class="fa fa-angle-right"></i></a>
-										<ul class="sub-menu">
-											<li><a href="contact-1.html">Contact Us 1</a></li>
-											<li><a href="contact-2.html">Contact Us 2</a></li>
-										</ul>
-									</li>
-									<li><a href="portfolio.html">Portfolio</a></li>
-									<li><a href="profile.html">Profile</a></li>
-									<li><a href="membership.html">Membership</a></li>
-									<li><a href="error-404.html">404 Page</a></li>
-									<li><a href="{% url 'home1' %}">Home</a></li>
+<!--									<li><a href="javascript:;">Contact Us<i class="fa fa-angle-right"></i></a>-->
+<!--										<ul class="sub-menu">-->
+<!--											<li><a href="contact-1.html">Contact Us 1</a></li>-->
+<!--											<li><a href="contact-2.html">Contact Us 2</a></li>-->
+<!--										</ul>-->
+<!--									</li>-->
+<!--									<li><a href="portfolio.html">Portfolio</a></li>-->
+<!--									<li><a href="profile.html">Profile</a></li>-->
+<!--									<li><a href="membership.html">Membership</a></li>-->
+<!--									<li><a href="error-404.html">404 Page</a></li>-->
+<!--									<li><a href="{% url 'home1' %}">Home</a></li>-->
 
-								</ul>
-							</li>
-								<li><a href="javascript:;">Blog <i class="fa fa-chevron-down"></i></a>
-								<ul class="sub-menu">
-									<li><a href="blog-classic-grid.html">Blog Classic</a></li>
-									<li><a href="blog-classic-sidebar.html">Blog Classic Sidebar</a></li>
-									<li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>
-									<li><a href="blog-standard-sidebar.html">Blog Standard Sidebar</a></li>
-									<li><a href="blog-details.html">Blog Details</a></li>
-								</ul>
-							</li>
+<!--								</ul>-->
+<!--							</li>-->
+<!--								<li><a href="javascript:;">Blog <i class="fa fa-chevron-down"></i></a>-->
+<!--								<ul class="sub-menu">-->
+<!--									<li><a href="blog-classic-grid.html">Blog Classic</a></li>-->
+<!--									<li><a href="blog-classic-sidebar.html">Blog Classic Sidebar</a></li>-->
+<!--									<li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>-->
+<!--									<li><a href="blog-standard-sidebar.html">Blog Standard Sidebar</a></li>-->
+<!--									<li><a href="blog-details.html">Blog Details</a></li>-->
+<!--								</ul>-->
+<!--							</li>-->
 
 <!--							<li class="nav-dashboard"><a href="javascript:;">Dashboard <i class="fa fa-chevron-down"></i></a>-->
 <!--								<ul class="sub-menu">-->
 <!--									<li><a href="admin/index.html">Dashboard</a></li>-->
 <!--									<li><a href="admin/add-listing.html">Add Listing</a></li>-->
 <!--									<li><a href="admin/bookmark.html">Bookmark</a></li>-->
-<!--									<li><a href="admin/courses.html">Courses</a></li>-->
+<!--									<li><a href="admin/courses old.html">Courses</a></li>-->
 <!--									<li><a href="admin/review.html">Review</a></li>-->
 <!--									<li><a href="admin/teacher-profile.html">Teacher Profile</a></li>-->
 <!--									<li><a href="admin/user-profile.html">User Profile</a></li>-->
@@ -272,7 +414,7 @@
 <!--
 <!--								</ul></li>-->
 
-						</ul>
+<!--						</ul>-->
 
 
 <!--						<div class="nav-social-link">-->
@@ -389,7 +531,7 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									Batter Education For A Better Future
+									Better Education For A Better Future
 							</div>
 
 							<!-- LAYER NR. 3 -->
@@ -547,7 +689,7 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									Batter Education For A Better Future
+									Better Education For A Better Future
 							</div>
 
 							<!-- LAYER NR. 3 -->
@@ -572,44 +714,44 @@
 
 							</div>
 							<!-- LAYER NR. 4 -->
-							<div class="tp-caption Newspaper-Button rev-btn "
-								id="slide-200-layer-5"
-								data-x="['center','center','center','center']"
-								data-hoffset="['90','80','75','90']"
-								data-y="['top','top','top','top']"
-								data-voffset="['400','400','400','420']"
-								data-width="none"
-								data-height="none"
-								data-whitespace="nowrap"
-								data-type="button"
-								data-responsive_offset="on"
-								data-responsive="off"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[12,12,12,12]"
-								data-paddingright="[30,35,35,15]"
-								data-paddingbottom="[12,12,12,12]"
-								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;">READ MORE </div>
-							<div class="tp-caption Newspaper-Button rev-btn"
-								id="slide-200-layer-6"
-								data-x="['center','center','center','center']"
-								data-hoffset="['-90','-80','-75','-90']"
-								data-y="['top','top','top','top']"
-								data-voffset="['400','400','400','420']"
-								data-width="none"
-								data-height="none"
-								data-whitespace="nowrap"
-								data-type="button"
-								data-responsive_offset="on"
-								data-responsive="off"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[12,12,12,12]"
-								data-paddingright="[30,35,35,15]"
-								data-paddingbottom="[12,12,12,12]"
-								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">CONTACT US</div>
+<!--							<div class="tp-caption Newspaper-Button rev-btn "-->
+<!--								id="slide-200-layer-5"-->
+<!--								data-x="['center','center','center','center']"-->
+<!--								data-hoffset="['90','80','75','90']"-->
+<!--								data-y="['top','top','top','top']"-->
+<!--								data-voffset="['400','400','400','420']"-->
+<!--								data-width="none"-->
+<!--								data-height="none"-->
+<!--								data-whitespace="nowrap"-->
+<!--								data-type="button"-->
+<!--								data-responsive_offset="on"-->
+<!--								data-responsive="off"-->
+<!--								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'-->
+<!--								data-textAlign="['center','center','center','center']"-->
+<!--								data-paddingtop="[12,12,12,12]"-->
+<!--								data-paddingright="[30,35,35,15]"-->
+<!--								data-paddingbottom="[12,12,12,12]"-->
+<!--								data-paddingleft="[30,35,35,15]"-->
+<!--								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(&#45;&#45;primary) !important; border:0; border-radius:30px; margin-right:5px;">READ MORE </div>-->
+<!--							<div class="tp-caption Newspaper-Button rev-btn"-->
+<!--								id="slide-200-layer-6"-->
+<!--								data-x="['center','center','center','center']"-->
+<!--								data-hoffset="['-90','-80','-75','-90']"-->
+<!--								data-y="['top','top','top','top']"-->
+<!--								data-voffset="['400','400','400','420']"-->
+<!--								data-width="none"-->
+<!--								data-height="none"-->
+<!--								data-whitespace="nowrap"-->
+<!--								data-type="button"-->
+<!--								data-responsive_offset="on"-->
+<!--								data-responsive="off"-->
+<!--								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'-->
+<!--								data-textAlign="['center','center','center','center']"-->
+<!--								data-paddingtop="[12,12,12,12]"-->
+<!--								data-paddingright="[30,35,35,15]"-->
+<!--								data-paddingbottom="[12,12,12,12]"-->
+<!--								data-paddingleft="[30,35,35,15]"-->
+<!--								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">CONTACT US</div>-->
 						</li>
 						<!-- SLIDE  -->
 					</ul>
@@ -620,54 +762,54 @@
 		<div class="content-block">
 
 			<!-- Our Services -->
-			<div class="section-area content-inner service-info-bx">
-                <div class="container">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="service-bx">
-								<div class="action-box">
-									<img src="{% static 'assets/images/our-services/pic1.jpg' %}" alt="">
-								</div>
-								<div class="info-bx text-center">
-									<div class="feature-box-sm radius bg-white">
-										<i class="fa fa-bank text-primary"></i>
-									</div>
-									<h4><a href="#">Best Industry Leaders</a></h4>
-									<a href="#" class="btn radius-xl">View More</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="service-bx">
-								<div class="action-box">
-									<img src="{% static 'assets/images/our-services/pic2.jpg' %}" alt="">
-								</div>
-								<div class="info-bx text-center">
-									<div class="feature-box-sm radius bg-white">
-										<i class="fa fa-book text-primary"></i>
-									</div>
-									<h4><a href="#">Learn Courses Online</a></h4>
-									<a href="#" class="btn radius-xl">View More</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-12">
-							<div class="service-bx m-b0">
-								<div class="action-box">
-									<img src="{% static 'assets/images/our-services/pic3.jpg' %}" alt="">
-								</div>
-								<div class="info-bx text-center">
-									<div class="feature-box-sm radius bg-white">
-										<i class="fa fa-file-text-o text-primary"></i>
-									</div>
-									<h4><a href="#">Book Library & Store</a></h4>
-									<a href="#" class="btn radius-xl">View More</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-            </div>
+<!--			<div class="section-area content-inner service-info-bx">-->
+<!--                <div class="container">-->
+<!--					<div class="row">-->
+<!--						<div class="col-lg-4 col-md-4 col-sm-6">-->
+<!--							<div class="service-bx">-->
+<!--								<div class="action-box">-->
+<!--									<img src="{% static 'assets/images/our-services/pic1.jpg' %}" alt="">-->
+<!--								</div>-->
+<!--								<div class="info-bx text-center">-->
+<!--									<div class="feature-box-sm radius bg-white">-->
+<!--										<i class="fa fa-bank text-primary"></i>-->
+<!--									</div>-->
+<!--									<h4><a href="#">Best Industry Leaders</a></h4>-->
+<!--									<a href="#" class="btn radius-xl">View More</a>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="col-lg-4 col-md-4 col-sm-6">-->
+<!--							<div class="service-bx">-->
+<!--								<div class="action-box">-->
+<!--									<img src="{% static 'assets/images/our-services/pic2.jpg' %}" alt="">-->
+<!--								</div>-->
+<!--								<div class="info-bx text-center">-->
+<!--									<div class="feature-box-sm radius bg-white">-->
+<!--										<i class="fa fa-book text-primary"></i>-->
+<!--									</div>-->
+<!--									<h4><a href="#">Learn Courses Online</a></h4>-->
+<!--									<a href="#" class="btn radius-xl">View More</a>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="col-lg-4 col-md-4 col-sm-12">-->
+<!--							<div class="service-bx m-b0">-->
+<!--								<div class="action-box">-->
+<!--									<img src="{% static 'assets/images/our-services/pic3.jpg' %}" alt="">-->
+<!--								</div>-->
+<!--								<div class="info-bx text-center">-->
+<!--									<div class="feature-box-sm radius bg-white">-->
+<!--										<i class="fa fa-file-text-o text-primary"></i>-->
+<!--									</div>-->
+<!--									<h4><a href="#">Book Library & Store</a></h4>-->
+<!--									<a href="#" class="btn radius-xl">View More</a>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--            </div>-->
             <!-- Our Services END -->
 
 			<!-- Popular Courses -->
@@ -681,14 +823,16 @@
 					</div>
 					<div class="row">
 					<div class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+						{% for i in course %}
 						<div class="item">
 							<div class="cours-bx">
+
 								<div class="action-box">
-									<img src="{% static 'assets/images/courses/pic1.jpg' %}" alt="">
-									<a href="#" class="btn">Read More</a>
+									<img src="{{i.image.url}}" alt="">
+<!--									<a href="#" class="btn">Read More</a>-->
 								</div>
 								<div class="info-bx text-center">
-									<h5><a href="#">Introduction to Python</a></h5>
+									<h5><a href="{{i.get_absolute_url}}">{{i.course_name}}</a></h5>
 									<span>Programming</span>
 								</div>
 								<div class="cours-more-info">
@@ -703,96 +847,97 @@
 										</ul>
 									</div>
 									<div class="price">
-										<del>$190</del>
-										<h5>$120</h5>
+										<del></del>
+										<h5>{{i.price}}</h5>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="item">
-							<div class="cours-bx">
-								<div class="action-box">
-									<img src="{% static 'assets/images/courses/pic2.jpg' %}" alt="">
-									<a href="#" class="btn">Read More</a>
-								</div>
-								<div class="info-bx text-center">
-									<h5><a href="#">Advanced Python</a></h5>
-									<span>Programming</span>
-								</div>
-								<div class="cours-more-info">
-									<div class="review">
-										<span>3 Review</span>
-										<ul class="cours-star">
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="price">
-										<del>$190</del>
-										<h5>$120</h5>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cours-bx">
-								<div class="action-box">
-									<img src="{% static 'assets/images/courses/pic3.jpg' %}" alt="">
-									<a href="#" class="btn">Read More</a>
-								</div>
-								<div class="info-bx text-center">
-									<h5><a href="#">Introduction to JAVA</a></h5>
-									<span>Programming</span>
-								</div>
-								<div class="cours-more-info">
-									<div class="review">
-										<span>3 Review</span>
-										<ul class="cours-star">
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="price">
-										<del>$190</del>
-										<h5>$120</h5>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cours-bx">
-								<div class="action-box">
-									<img src="{% static 'assets/images/courses/pic4.jpg' %}" alt="">
-									<a href="#" class="btn">Read More</a>
-								</div>
-								<div class="info-bx text-center">
-									<h5><a href="#">Advanced JAVA</a></h5>
-									<span>Programming</span>
-								</div>
-								<div class="cours-more-info">
-									<div class="review">
-										<span>3 Review</span>
-										<ul class="cours-star">
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="price">
-										<del>$190</del>
-										<h5>$120</h5>
-									</div>
-								</div>
-							</div>
-						</div>
+						 {% endfor %}
+<!--						<div class="item">-->
+<!--							<div class="cours-bx">-->
+<!--								<div class="action-box">-->
+<!--									<img src="{% static 'assets/images/courses/pic2.jpg' %}" alt="">-->
+<!--									<a href="#" class="btn">Read More</a>-->
+<!--								</div>-->
+<!--								<div class="info-bx text-center">-->
+<!--									<h5><a href="#">Advanced Python</a></h5>-->
+<!--									<span>Programming</span>-->
+<!--								</div>-->
+<!--								<div class="cours-more-info">-->
+<!--									<div class="review">-->
+<!--										<span>3 Review</span>-->
+<!--										<ul class="cours-star">-->
+<!--											<li class="active"><i class="fa fa-star"></i></li>-->
+<!--											<li class="active"><i class="fa fa-star"></i></li>-->
+<!--											<li class="active"><i class="fa fa-star"></i></li>-->
+<!--											<li><i class="fa fa-star"></i></li>-->
+<!--											<li><i class="fa fa-star"></i></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--									<div class="price">-->
+<!--										<del>$190</del>-->
+<!--										<h5>$120</h5>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="item">-->
+<!--							<div class="cours-bx">-->
+<!--								<div class="action-box">-->
+<!--									<img src="{% static 'assets/images/courses/pic3.jpg' %}" alt="">-->
+<!--									<a href="#" class="btn">Read More</a>-->
+<!--								</div>-->
+<!--								<div class="info-bx text-center">-->
+<!--									<h5><a href="#">Introduction to JAVA</a></h5>-->
+<!--									<span>Programming</span>-->
+<!--								</div>-->
+<!--								<div class="cours-more-info">-->
+<!--									<div class="review">-->
+<!--										<span>3 Review</span>-->
+<!--										<ul class="cours-star">-->
+<!--											<li class="active"><i class="fa fa-star"></i></li>-->
+<!--											<li class="active"><i class="fa fa-star"></i></li>-->
+<!--											<li class="active"><i class="fa fa-star"></i></li>-->
+<!--											<li><i class="fa fa-star"></i></li>-->
+<!--											<li><i class="fa fa-star"></i></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--									<div class="price">-->
+<!--										<del>$190</del>-->
+<!--										<h5>$120</h5>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="item">-->
+<!--							<div class="cours-bx">-->
+<!--								<div class="action-box">-->
+<!--									<img src="{% static 'assets/images/courses/pic4.jpg' %}" alt="">-->
+<!--									<a href="#" class="btn">Read More</a>-->
+<!--								</div>-->
+<!--								<div class="info-bx text-center">-->
+<!--									<h5><a href="#">Advanced JAVA</a></h5>-->
+<!--									<span>Programming</span>-->
+<!--								</div>-->
+<!--								<div class="cours-more-info">-->
+<!--									<div class="review">-->
+<!--										<span>3 Review</span>-->
+<!--										<ul class="cours-star">-->
+<!--											<li class="active"><i class="fa fa-star"></i></li>-->
+<!--											<li class="active"><i class="fa fa-star"></i></li>-->
+<!--											<li class="active"><i class="fa fa-star"></i></li>-->
+<!--											<li><i class="fa fa-star"></i></li>-->
+<!--											<li><i class="fa fa-star"></i></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--									<div class="price">-->
+<!--										<del>$190</del>-->
+<!--										<h5>$120</h5>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
 					</div>
 					</div>
 				</div>
@@ -806,9 +951,9 @@
 						<div class="col-md-12 text-center text-white">
 							<h2>Online Courses To Learn</h2>
 							<h5>Own Your Feature Learning New Skills Online</h5>
-							<form class="cours-search">
+							<form class="cours-search" action="{% url 'search_course' %}" method="GET">
 								<div class="input-group">
-									<input type="text" class="form-control" placeholder="What do you want to learn today?	">
+									<input type="text" name="query" class="form-control" placeholder="What do you want to learn today?	">
 									<div class="input-group-append">
 										<button class="btn" type="submit">Search</button>
 									</div>
@@ -816,34 +961,34 @@
 							</form>
 						</div>
 					</div>
-					<div class="mw800 m-auto">
-						<div class="row">
-							<div class="col-md-4 col-sm-6">
-								<div class="cours-search-bx m-b30">
-									<div class="icon-box">
-										<h3><i class="ti-user"></i><span class="counter">5</span>M</h3>
-									</div>
-									<span class="cours-search-text">Over 5 million student</span>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-6">
-								<div class="cours-search-bx m-b30">
-									<div class="icon-box">
-										<h3><i class="ti-book"></i><span class="counter">30</span>K</h3>
-									</div>
-									<span class="cours-search-text">30,000 Courses.</span>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-12">
-								<div class="cours-search-bx m-b30">
-									<div class="icon-box">
-										<h3><i class="ti-layout-list-post"></i><span class="counter">20</span>K</h3>
-									</div>
-									<span class="cours-search-text">Learn Anythink Online.</span>
-								</div>
-							</div>
-						</div>
-					</div>
+<!--					<div class="mw800 m-auto">-->
+<!--						<div class="row">-->
+<!--							<div class="col-md-4 col-sm-6">-->
+<!--								<div class="cours-search-bx m-b30">-->
+<!--									<div class="icon-box">-->
+<!--										<h3><i class="ti-user"></i><span class="counter">5</span>M</h3>-->
+<!--									</div>-->
+<!--									<span class="cours-search-text">Over 5 million student</span>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							<div class="col-md-4 col-sm-6">-->
+<!--								<div class="cours-search-bx m-b30">-->
+<!--									<div class="icon-box">-->
+<!--										<h3><i class="ti-book"></i><span class="counter">30</span>K</h3>-->
+<!--									</div>-->
+<!--									<span class="cours-search-text">30,000 Courses.</span>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							<div class="col-md-4 col-sm-12">-->
+<!--								<div class="cours-search-bx m-b30">-->
+<!--									<div class="icon-box">-->
+<!--										<h3><i class="ti-layout-list-post"></i><span class="counter">20</span>K</h3>-->
+<!--									</div>-->
+<!--									<span class="cours-search-text">Learn Anythink Online.</span>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
 				</div>
 			</div>
 			<!-- Form END -->
@@ -858,34 +1003,38 @@
 						</div>
 					</div>
 					<div class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+						{% for i in review %}
 						<div class="item">
 							<div class="testimonial-bx">
-								<div class="testimonial-thumb">
-									<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt="">
-								</div>
+<!--								<div class="testimonial-thumb">-->
+<!--									<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt="">-->
+<!--								</div>-->
 								<div class="testimonial-info">
-									<h5 class="name">Keny White</h5>
-									<p>-Art Director</p>
+									<h5 style="font-size:26px;margin-left:2px;color:red;text-align:left;" class="name">{{i.user}}</h5>
+									</div>
+								<div>
+									<p style="font-size:16px;margin-left:2px;text-align:left;color:blue;">"{{i.review}}!"</p>
 								</div>
-								<div class="testimonial-content">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</p>
-								</div>
+<!--								<div class="testimonial-content">-->
+<!--									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</p>-->
+<!--								</div>-->
 							</div>
 						</div>
-						<div class="item">
-							<div class="testimonial-bx">
-								<div class="testimonial-thumb">
-									<img src="{% static 'assets/images/testimonials/pic2.jpg' %}" alt="">
-								</div>
-								<div class="testimonial-info">
-									<h5 class="name">Peter Packer</h5>
-									<p>-Art Director</p>
-								</div>
-								<div class="testimonial-content">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</p>
-								</div>
-							</div>
-						</div>
+						{% endfor %}
+<!--						<div class="item">-->
+<!--							<div class="testimonial-bx">-->
+<!--								<div class="testimonial-thumb">-->
+<!--									<img src="{% static 'assets/images/testimonials/pic2.jpg' %}" alt="">-->
+<!--								</div>-->
+<!--								<div class="testimonial-info">-->
+<!--									<h5 class="name">Peter Packer</h5>-->
+<!--									<p>-Art Director</p>-->
+<!--								</div>-->
+<!--								<div class="testimonial-content">-->
+<!--									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</p>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
 					</div>
 				</div>
 			</div>
@@ -1006,6 +1155,7 @@
 </div>
 
 <!-- External JavaScripts -->
+<!--<script src="{% static 'script.js' %}" type="text/javascript"></script>-->
 <script src="{% static 'assets/js/jquery.min.js' %}"></script>
 <script src="{% static 'assets/vendors/bootstrap/js/popper.min.js' %}"></script>
 <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
@@ -1035,6 +1185,7 @@
 <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
 <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
 <script>
+
 jQuery(document).ready(function() {
 	var ttrevapi;
 	var tpj =jQuery;
